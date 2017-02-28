@@ -312,17 +312,6 @@ class Prefix(CreatedUpdatedModel, CustomFieldModel):
     def clean(self):
 
         if self.prefix:
-
-            # Disallow host masks
-            if self.prefix.version == 4 and self.prefix.prefixlen == 32:
-                raise ValidationError({
-                    'prefix': "Cannot create host addresses (/32) as prefixes. Create an IPv4 address instead."
-                })
-            elif self.prefix.version == 6 and self.prefix.prefixlen == 128:
-                raise ValidationError({
-                    'prefix': "Cannot create host addresses (/128) as prefixes. Create an IPv6 address instead."
-                })
-
             # Enforce unique IP space (if applicable)
             if (self.vrf is None and settings.ENFORCE_GLOBAL_UNIQUE) or (self.vrf and self.vrf.enforce_unique):
                 duplicate_prefixes = self.get_duplicates()

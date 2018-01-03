@@ -122,6 +122,10 @@ PREFER_IPV4 = False
 # this setting is derived from the installed location.
 # REPORTS_ROOT = '/opt/netbox/netbox/reports'
 
+# The file path where collectstatic will collect static files for deployment. A trailing slash is not needed. Note that
+# the default value of this setting is derived from the installed location.
+# STATIC_ROOT = '/opt/netbox/netbox/static'
+
 # Time zone (default: UTC)
 TIME_ZONE = 'UTC'
 

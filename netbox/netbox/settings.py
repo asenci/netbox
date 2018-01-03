@@ -58,6 +58,7 @@ REPORTS_ROOT = getattr(configuration, 'REPORTS_ROOT', os.path.join(BASE_DIR, 're
 SHORT_DATE_FORMAT = getattr(configuration, 'SHORT_DATE_FORMAT', 'Y-m-d')
 SHORT_DATETIME_FORMAT = getattr(configuration, 'SHORT_DATETIME_FORMAT', 'Y-m-d H:i')
 SHORT_TIME_FORMAT = getattr(configuration, 'SHORT_TIME_FORMAT', 'H:i:s')
+STATIC_ROOT = getattr(configuration, 'STATIC_ROOT', os.path.join(BASE_DIR, 'static')).rstrip('/')
 TIME_FORMAT = getattr(configuration, 'TIME_FORMAT', 'g:i a')
 TIME_ZONE = getattr(configuration, 'TIME_ZONE', 'UTC')
 
@@ -184,7 +185,6 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = BASE_DIR + '/static/'
 STATIC_URL = '/{}static/'.format(BASE_PATH)
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "project-static"),

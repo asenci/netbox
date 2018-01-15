@@ -215,6 +215,14 @@ The file path to the location where custom reports will be kept. By default, thi
 
 ---
 
+## STATIC_ROOT
+
+Default: $BASE_DIR/netbox/static/
+
+The file path where collectstatic will collect static files for deployment. By default, this is the `netbox/static/` directory within the base NetBox installation path.
+
+---
+
 ## TIME_ZONE
 
 Default: UTC
